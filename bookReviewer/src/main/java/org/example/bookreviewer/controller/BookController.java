@@ -22,13 +22,16 @@ public class BookController {
         return bookService.getById(id);
     }
 
-    @PostMapping
-    public Book addBlock(@RequestBody Book book){
-        return bookService.save(book);
-    }
-
     @DeleteMapping("/{id}")
     public void deleteBook(@PathVariable Long id){
         bookService.deleteById(id);
+    }
+
+    @PostMapping
+    public ResponseEntity<Book> addBook(@RequestBody Book book){
+        Book savedBook = bookService.save(book);
+
+        //  return 201
+        return new ResponseEntity<>(savedBook, HttpStatus.CREATED);
     }
 }

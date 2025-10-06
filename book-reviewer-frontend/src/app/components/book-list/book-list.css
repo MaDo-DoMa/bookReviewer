@@ -1,0 +1,22 @@
+/* src/app/components/book-list/book-list.css */
+
+.book-list-container {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.book-item {
+  padding: 10px 0;
+  border-bottom: 1px dotted #eee;
+}
+
+.book-item:last-child {
+  border-bottom: none;
+}
+
+.book-item h3 {
+  color: #007bff;
+  margin-top: 0;
+}

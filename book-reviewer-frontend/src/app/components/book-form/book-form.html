@@ -1,0 +1,28 @@
+<div class="book-form-container">
+  <h2>Add new Book</h2>
+  @if ( successMessage){
+    <p style="color:green; font-weight: bold;">{{successMessage}}</p>
+  }
+  @if (errorMessage){
+    <p style="color:red; font-weight: bold;">{{errorMessage}}</p>
+  }
+
+  <form (ngSubmit)="saveBook()">
+    <label>Title:</label>
+    <input type="text"[(ngModel)]="book.title" name="title" required>
+
+    <label>Author:</label>
+    <input type="text"[(ngModel)]="book.author" name="author" required>
+
+    <label>Publisher:</label>
+    <input type="text"[(ngModel)]="book.publisher" name="publisher">
+
+    <label>Price:</label>
+    <input type="number"[(ngModel)]="book.price" name="price">
+
+    <label>Publication Date:</label>
+    <input type="date"[(ngModel)]="book.publicationDate" name="publicationDate">
+
+    <button type="submit">Add Book to Database</button>
+  </form>
+</div>

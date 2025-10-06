@@ -12,6 +12,12 @@ export class BookService {
   constructor(private http: HttpClient) { }
 
   getBooks(): Observable<any> {
+    console.log('---BookService.getBooks() called');
     return this.http.get(this.apiUrl);
+  }
+
+  addBook(newBook: any): Observable<any>{
+    console.log(`Sending POST request to ${this.apiUrl} with book:`, newBook);
+    return this.http.post(this.apiUrl, newBook);
   }
 }
